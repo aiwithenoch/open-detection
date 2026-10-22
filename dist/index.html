@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173d5f" />
+    <meta name="description" content="Open Detection — an original document review product prototype." />
+    <title>Open Detection</title>
+    <link rel="stylesheet" data-open-detection-asset="styles.css" />
+  </head>
+  <body>
+    <div id="app" aria-live="polite"></div>
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <script>
+      (() => {
+        const assetBase = window.location.protocol === 'file:' ? './' : '/';
+        const stylesheet = document.querySelector('[data-open-detection-asset]');
+        stylesheet.href = `${assetBase}${stylesheet.dataset.openDetectionAsset}?v=20261022-logo-1`;
+        const script = document.createElement('script');
+        script.src = `${assetBase}app.js?v=20261022-logo-1`;
+        script.defer = true;
+        document.body.appendChild(script);
+      })();
+    </script>
+  </body>
+</html>
